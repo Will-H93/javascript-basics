@@ -1,62 +1,150 @@
 function negate(a) {
-  // your code here
-};
+  let falsy = '';
+
+  if (a === true) {
+    falsy = !true;
+  } else if (a === false) {
+    falsy = !false;
+  }
+  return falsy;
+}
 
 function both(a, b) {
-  // your code here
-};
+  return a === true && b === true;
+}
 
 function either(a, b) {
-  // your code here
-};
+  let eitherTrue = '';
+  if (a || b === true) {
+    eitherTrue = true;
+  } else {
+    eitherTrue = false;
+  }
+  return eitherTrue;
+}
 
 function none(a, b) {
-  // your code here
-};
+  let bothFalse = '';
+  if (a === false && b === false) {
+    bothFalse = true;
+  } else {
+    bothFalse = false;
+  }
+  return bothFalse;
+}
 
 function one(a, b) {
-  // your code here
-};
+  let atLeastOne = '';
+  if (a === true && b === false) {
+    atLeastOne = true;
+  } else if (a === false && b === true) {
+    atLeastOne = true;
+  } else {
+    atLeastOne = false;
+  }
+  return atLeastOne;
+}
 
 function truthiness(a) {
-  // your code here
-};
+  let truthy = '';
+  if (a) {
+    truthy = true;
+  } else {
+    truthy = false;
+  }
+  return truthy;
+}
 
 function isEqual(a, b) {
-  // your code here
-};
+  let equal = '';
+  if (a === b) {
+    equal = true;
+  } else {
+    equal = false;
+  }
+  return equal;
+}
 
 function isGreaterThan(a, b) {
-  // your code here
-};
+  let greater = '';
+  if (a > b) {
+    greater = true;
+  } else {
+    greater = false;
+  }
+  return greater;
+}
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
-};
+  let lessOrEqual = '';
+  if (a <= b) {
+    lessOrEqual = true;
+  } else {
+    lessOrEqual = false;
+  }
+  return lessOrEqual;
+}
 
 function isOdd(a) {
-  // your code here
-};
+  let odd = '';
+  if (a % 2) {
+    odd = true;
+  } else {
+    odd = false;
+  }
+  return odd;
+}
 
 function isEven(a) {
-  // your code here
-};
+  let even = '';
+  if (a % 2) {
+    even = false;
+  } else {
+    even = true;
+  }
+  return even;
+}
 
 function isSquare(a) {
-  // your code here
-};
+  let square = Math.sqrt(a) % 1 === 0;
+  if (square === true) {
+    square = true;
+  } else {
+    square = false;
+  }
+  return square;
+}
 
 function startsWith(char, string) {
-  // your code here
-};
+  let firstLetter = '';
+  if (string.charAt(0) === char) {
+    firstLetter = true;
+  } else {
+    firstLetter = false;
+  }
+  return firstLetter;
+}
 
 function containsVowels(string) {
-  // your code here
-};
+  let hasVowels = '';
+  const vowels = /[aeiou]/gi;
+  if (vowels.test(string) === true) {
+    hasVowels = true;
+  } else {
+    hasVowels = false;
+  }
+  return hasVowels;
+}
 
 function isLowerCase(string) {
-  // your code here
-};
+  let lower = '';
+  if (string === string.toLowerCase()) {
+    lower = true;
+  } else {
+    lower = false;
+  }
+  return lower;
+}
 
 module.exports = {
   negate,
