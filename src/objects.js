@@ -1,41 +1,63 @@
+const { arrayToCSVString } = require("./arrays");
+
 const createPerson = (name, age) => {
-  // your code here
+  return {
+    name,
+    age
+  };
 };
 
 const getName = object => {
-  // your code here
+  return object.name;
 };
 
 const getProperty = (property, object) => {
-  // your code here
+  return object[property];
 };
 
 const hasProperty = (property, object) => {
-  // your code here
+  let isTrue = '';
+  if (object[property]) {
+    isTrue = true;
+  } else {
+    isTrue = false;
+  }
+  return isTrue;
 };
 
 const isOver65 = person => {
-  // your code here
+  return person.age > 65;
 };
 
 const getAges = people => {
-  // your code here
+  return people.map(person => person.age);
 };
 
 const findByName = (name, people) => {
-  // your code here
+  return people.find(person => person.name === name);
 };
 
 const findHondas = cars => {
-  // your code here
+  const manfacCheck = cars.filter(manfac => {
+    return manfac.manufacturer === 'Honda';
+  });
+  return manfacCheck;
 };
 
 const averageAge = people => {
-  // your code here
+  const average = people.reduce((acc, person) => person.age + acc, 0) / people.length;
+  // I don't really understand the whole line. I believe it's the accumularion of each person in the array, adding each age to the accumulation starting from 0 and then dividing by the number of people in the array.
+  return average;
 };
 
 const createTalkingPerson = (name, age) => {
-  // your code here
+  return {
+    name,
+    age,
+    introduce: newPerson => {
+      return `Hi ${newPerson}, my name is ${name} and I am ${age}!`;
+    }
+  };
 };
 
 module.exports = {
